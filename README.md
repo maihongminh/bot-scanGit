@@ -84,6 +84,8 @@ docker-compose exec backend python init_db.py
 - API: http://localhost:8000
 - API Docs: http://localhost:8000/docs
 
+> **Note**: This Quick Start covers basic setup. For a complete setup with all configurations, troubleshooting, and detailed instructions, please refer to [STEP_BY_STEP_UPDATED.md](./STEP_BY_STEP_UPDATED.md). This will help you avoid common setup issues and ensure proper configuration.
+
 ### Local Development Setup
 
 #### Backend Setup
@@ -376,4 +378,4 @@ For issues, questions, or suggestions:
 
 ---
 
-**Made with  by the Security Team**
+For support and issues, contact: https://github.com/maihongminh
