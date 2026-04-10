@@ -68,7 +68,17 @@ def perform_repository_scan(repository_id: int, max_commits: int = None) -> dict
         detection_service = DetectionService()
         
         # Get commits from GitHub
-        commits_info = gh_service.get_commits(repo.name, max_commits=max_commits)
+        # If last_scanned_at exists, only scan new commits since then
+        commits_since = None
+        if repo.last_scanned_at:
+            commits_since = repo.last_scanned_at
+            logger.info(f"Scanning commits since {commits_since} for {repo.name}")
+        
+        commits_info = gh_service.get_commits(
+            repo.name, 
+            max_commits=max_commits,
+            since=commits_since
+        )
         
         if not commits_info:
             logger.warning(f"No commits found for repository {repo.name}")

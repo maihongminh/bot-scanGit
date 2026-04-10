@@ -36,6 +36,7 @@
   padding: 0 2rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
   max-width: 100%;
   overflow-x: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
