@@ -846,3 +846,411 @@
   color: #9ca3af;
 }
 
+
+/* ===== STATISTICS TAB STYLES ===== */
+
+.statistics-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat-section {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-section.full-width {
+  grid-column: 1 / -1;
+}
+
+.stat-section h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Skeleton Loaders */
+.skeleton-card {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  height: 80px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-line {
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Type Details */
+.type-details {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.type-detail-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 120px 120px;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.type-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.type-count {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.type-repos {
+  color: #6b7280;
+  text-align: center;
+}
+
+.type-confidence {
+  background: #dcfce7;
+  color: #166534;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Tables */
+.repository-stats-table table,
+.scan-history-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.repository-stats-table th,
+.scan-history-table th {
+  background: #f9fafb;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.repository-stats-table td,
+.scan-history-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.repository-stats-table tbody tr:hover,
+.scan-history-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.repo-name {
+  font-weight: 500;
+  color: #0066cc;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.scanning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Aggregates Summary */
+.aggregates-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.aggregate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.aggregate-label {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.aggregate-value {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: #6b7280;
+  min-width: 250px;
+  text-align: center;
+}
+
+.pagination .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.pagination .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  font-style: italic;
+}
+
+/* Responsive Charts */
+.recharts-wrapper {
+  margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+  .statistics-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .type-detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .type-count,
+  .type-repos,
+  .type-confidence {
+    display: inline-block;
+    width: auto;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .stat-section {
+    padding: 1rem;
+  }
+
+  .repository-stats-table table,
+  .scan-history-table table {
+    font-size: 0.85rem;
+  }
+
+  .repository-stats-table th,
+  .scan-history-table th {
+    padding: 0.5rem;
+  }
+
+  .repository-stats-table td,
+  .scan-history-table td {
+    padding: 0.5rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pagination-info {
+    min-width: auto;
+  }
+
+  .type-detail-row {
+    grid-template-columns: 1fr;
+  }
+
+  .aggregates-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Additional responsive improvements */
+@media (max-width: 1199px) {
+  .stat-detail-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .repository-stats-table table,
+  .scan-history-table table {
+    font-size: 0.85rem;
+  }
+
+  .aggregates-summary {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .statistics-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stat-section h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .aggregates-summary {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .type-detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+  }
+
+  .repository-stats-table table,
+  .scan-history-table table {
+    font-size: 0.8rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .repository-stats-table th,
+  .repository-stats-table td,
+  .scan-history-table th,
+  .scan-history-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .pagination-info {
+    font-size: 0.8rem;
+  }
+
+  .pagination .btn {
+    width: 100%;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .recharts-surface {
+    overflow: auto !important;
+  }
+}
+
+/* Performance optimization - lazy load charts */
+.stat-section .recharts-wrapper {
+  will-change: contents;
+}
+
+/* Improve table readability on small screens */
+@media (max-width: 600px) {
+  .repository-stats-table table,
+  .scan-history-table table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .repository-stats-table thead,
+  .scan-history-table thead {
+    display: none;
+  }
+
+  .repository-stats-table tr,
+  .scan-history-table tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .repository-stats-table td,
+  .scan-history-table td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    padding: 0.5rem 0;
+  }
+
+  .repository-stats-table td::before,
+  .scan-history-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    min-width: 100px;
+  }
+}
+

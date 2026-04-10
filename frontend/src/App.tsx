@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { RepositoriesTab, Repository } from './components/RepositoriesTab'
 import { DetectionsTab } from './components/DetectionsTab'
+import { StatisticsTab } from './components/StatisticsTab'
 
 function App() {
   const [repositories, setRepositories] = useState<Repository[]>([])
@@ -152,12 +153,10 @@ function App() {
         )}
 
         {activeTab === 'stats' && (
-          <section className="section">
-            <h2>📊 Statistics</h2>
-            <div className="placeholder">
-              <p>Statistics view coming soon</p>
-            </div>
-          </section>
+          <StatisticsTab
+            repositories={repositories}
+            apiUrl={API_URL}
+          />
         )}
       </main>
 
